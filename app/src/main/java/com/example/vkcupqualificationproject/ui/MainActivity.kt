@@ -1,6 +1,8 @@
 package com.example.vkcupqualificationproject.ui
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vkcupqualificationproject.databinding.ActivityMainBinding
@@ -31,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 		"Цирк",
 	)
 
+	private val categoryViewsList = arrayListOf<CategoryCustomView>()
+
 	private val binding by lazy {
 		ActivityMainBinding.inflate(this.layoutInflater)
 	}
@@ -46,10 +50,22 @@ class MainActivity : AppCompatActivity() {
 		binding.flexBox.removeAllViews()
 		for (category in categoriesArray) {
 			val categoryView = CategoryCustomView(context = this)
+			categoryViewsList.add(categoryView)
 			categoryView.setCategoryText(category)
-			categoryView.onButtonClickListener()
+			categoryView.setOnCategoryClickListener {
+				changeContinueButtonVisibility()
+				Log.d("SHIIIT", countSelectedCategories().toString())
+			}
 			binding.flexBox.addView(categoryView)
 			setCategoryMargin(categoryView)
+		}
+	}
+
+	private fun changeContinueButtonVisibility() {
+		if (countSelectedCategories() == 0) {
+			binding.continueButton.visibility = View.GONE
+		} else {
+			binding.continueButton.visibility = View.VISIBLE
 		}
 	}
 
@@ -57,5 +73,15 @@ class MainActivity : AppCompatActivity() {
 		val params = categoryView.layoutParams as ViewGroup.MarginLayoutParams
 		params.marginEnd = 30
 		params.topMargin = 30
+	}
+
+	private fun countSelectedCategories(): Int {
+		var count = 0
+		for (categoryView in categoryViewsList) {
+			if (categoryView.checkIfCategorySelected()) {
+				count++
+			}
+		}
+		return count
 	}
 }

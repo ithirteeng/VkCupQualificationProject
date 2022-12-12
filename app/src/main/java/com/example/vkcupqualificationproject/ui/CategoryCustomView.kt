@@ -46,15 +46,20 @@ class CategoryCustomView @JvmOverloads constructor(
 		transition.startTransition(resources.getInteger(R.integer.category_animation_duration))
 	}
 
-	fun onButtonClickListener() {
+	fun setOnCategoryClickListener(onCategoryClick: () -> Unit) {
 		binding.mainLayout.setOnClickListener {
 			addAnimation()
 			recolorCardView()
+			onCategoryClick()
 		}
 	}
 
 	fun setCategoryText(category: String) {
 		binding.textView.text = category
+	}
+
+	fun checkIfCategorySelected(): Boolean {
+		return isCardSelected
 	}
 
 

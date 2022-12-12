@@ -5,59 +5,54 @@
 	android:clickable="true"
 	tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-
-	<androidx.cardview.widget.CardView
-		android:id="@+id/cardView"
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/mainLayout"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		app:cardBackgroundColor="@color/gray_medium"
-		app:cardCornerRadius="10dp">
+		android:background="@drawable/card_gray_background"
+		android:clickable="true"
+		android:padding="@dimen/category_padding">
 
-		<androidx.constraintlayout.widget.ConstraintLayout
+
+		<TextView
+			android:id="@+id/textView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:padding="@dimen/category_padding">
+			android:layout_marginEnd="@dimen/category_elements_margin"
+			android:text="@string/category_default_text"
+			android:textColor="@color/white"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/line"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-			<TextView
-				android:id="@+id/textView"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginEnd="@dimen/category_elements_margin"
-				android:text="@string/category_default_text"
-				android:textColor="@color/white"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toStartOf="@+id/line"
-				app:layout_constraintHorizontal_chainStyle="packed"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
+		<View
+			android:id="@+id/line"
+			android:layout_width="1dp"
+			android:layout_height="19dp"
+			android:background="@color/gray_light"
+			android:padding="0dp"
+			app:layout_constraintBottom_toBottomOf="@+id/textView"
+			app:layout_constraintEnd_toStartOf="@+id/imageButton"
+			app:layout_constraintStart_toEndOf="@+id/textView"
+			app:layout_constraintTop_toTopOf="@+id/textView" />
 
-			<View
-				android:id="@+id/line"
-				android:layout_width="1dp"
-				android:layout_height="19dp"
-				android:background="@color/gray_light"
-				android:padding="0dp"
-				app:layout_constraintBottom_toBottomOf="@+id/textView"
-				app:layout_constraintEnd_toStartOf="@+id/imageButton"
-				app:layout_constraintStart_toEndOf="@+id/textView"
-				app:layout_constraintTop_toTopOf="@+id/textView" />
+		<ImageView
+			android:id="@+id/imageButton"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_marginStart="@dimen/category_elements_margin"
+			android:background="@color/transparent"
+			android:contentDescription="@string/category_image_description"
+			app:layout_constraintBottom_toBottomOf="@+id/textView"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/line"
+			app:layout_constraintTop_toTopOf="@+id/textView"
+			app:srcCompat="@drawable/icon_add"
+			tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
 
-			<ImageButton
-				android:id="@+id/imageButton"
-				android:layout_width="wrap_content"
-				android:layout_height="0dp"
-				android:background="@color/transparent"
-				android:contentDescription="@string/category_image_description"
-				android:layout_marginStart="@dimen/category_elements_margin"
-				app:layout_constraintBottom_toBottomOf="@+id/textView"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintHorizontal_bias="0.5"
-				app:layout_constraintStart_toEndOf="@+id/line"
-				app:layout_constraintTop_toTopOf="@+id/textView"
-				app:srcCompat="@drawable/icon_add"
-				tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
-
-		</androidx.constraintlayout.widget.ConstraintLayout>
-	</androidx.cardview.widget.CardView>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 </merge>
 

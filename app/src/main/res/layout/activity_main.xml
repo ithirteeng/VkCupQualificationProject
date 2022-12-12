@@ -16,7 +16,17 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/laterButton"
-		tools:ignore="SpeakableTextPresentCheck">
+		tools:ignore="SpeakableTextPresentCheck"
+		android:overScrollMode="never"
+		android:scrollbars="none">
+
+		<com.google.android.flexbox.FlexboxLayout
+			android:id="@+id/flexBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:alignContent="stretch"
+			app:alignItems="stretch"
+			app:flexWrap="wrap" />
 
 	</ScrollView>
 
@@ -61,10 +71,12 @@
 		android:id="@+id/continueButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="@dimen/main_margin"
 		android:background="@drawable/continue_button_background"
 
-		android:padding="@dimen/continue_button_padding"
+		android:paddingBottom="@dimen/continue_button_padding"
+		android:paddingEnd="@dimen/continue_button_padding_horizontal"
+		android:paddingStart="@dimen/continue_button_padding_horizontal"
+		android:paddingTop="@dimen/continue_button_padding"
 		android:text="@string/continue_text"
 		android:textAllCaps="false"
 		android:textSize="@dimen/category_text_size"

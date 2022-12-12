@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:drawable="@drawable/icon_tick">
+
+	<target
+		android:name="tick"
+		android:animation="@animator/tick_to_add_anim" />
+
+
+	<target
+		android:name="@string/category_group_name"
+		android:animation="@animator/rotate_tick_to_add" />
+
+</animated-vector>

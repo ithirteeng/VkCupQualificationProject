@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:clickable="true"
+	tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/mainLayout"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/card_gray_background"
+		android:clickable="true"
+		android:padding="@dimen/category_padding">
+
+
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/category_elements_margin"
+			android:gravity="center"
+			android:text="@string/category_default_text"
+			android:textColor="@color/white"
+			android:textSize="@dimen/category_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/line"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<View
+			android:id="@+id/line"
+			android:layout_width="1dp"
+			android:layout_height="@dimen/category_text_size"
+			android:background="@color/gray_light"
+			android:padding="0dp"
+			app:layout_constraintBottom_toBottomOf="@+id/textView"
+			app:layout_constraintEnd_toStartOf="@+id/imageButton"
+			app:layout_constraintStart_toEndOf="@+id/textView"
+			app:layout_constraintTop_toTopOf="@+id/textView" />
+
+		<ImageView
+			android:id="@+id/imageButton"
+			android:layout_width="@dimen/category_text_size"
+			android:layout_height="@dimen/category_text_size"
+			android:layout_marginStart="@dimen/category_elements_margin"
+			android:background="@color/transparent"
+			android:contentDescription="@string/category_image_description"
+			app:layout_constraintBottom_toBottomOf="@+id/textView"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/line"
+			app:layout_constraintTop_toTopOf="@+id/textView"
+			app:srcCompat="@drawable/icon_add"
+			tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</merge>
+

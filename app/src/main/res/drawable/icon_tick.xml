@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:width="@dimen/category_text_size"
+	android:height="@dimen/category_text_size"
+	android:viewportHeight="24"
+	android:viewportWidth="24">
+	<group
+		android:name="@string/category_group_name"
+		android:pivotX="12"
+		android:pivotY="12"
+		android:translateX="0">
+
+		<path
+			android:name="tick"
+			android:pathData="M20,3L07,19.6M0,14.3,L08,20"
+			android:strokeColor="@android:color/white"
+			android:strokeWidth="2" />
+	</group>
+</vector>

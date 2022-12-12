@@ -8,7 +8,7 @@
 
 
 	<target
-		android:name="groupTickCross"
+		android:name="@string/category_group_name"
 		android:animation="@animator/rotate_add_to_tick" />
 
 </animated-vector>

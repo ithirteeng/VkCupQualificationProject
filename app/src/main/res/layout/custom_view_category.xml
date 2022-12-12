@@ -20,6 +20,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginEnd="@dimen/category_elements_margin"
 			android:text="@string/category_default_text"
+			android:textSize="@dimen/category_text_size"
 			android:textColor="@color/white"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toStartOf="@+id/line"
@@ -30,7 +31,7 @@
 		<View
 			android:id="@+id/line"
 			android:layout_width="1dp"
-			android:layout_height="19dp"
+			android:layout_height="@dimen/category_text_size"
 			android:background="@color/gray_light"
 			android:padding="0dp"
 			app:layout_constraintBottom_toBottomOf="@+id/textView"
@@ -40,8 +41,8 @@
 
 		<ImageView
 			android:id="@+id/imageButton"
-			android:layout_width="wrap_content"
-			android:layout_height="0dp"
+			android:layout_width="@dimen/category_text_size"
+			android:layout_height="@dimen/category_text_size"
 			android:layout_marginStart="@dimen/category_elements_margin"
 			android:background="@color/transparent"
 			android:contentDescription="@string/category_image_description"

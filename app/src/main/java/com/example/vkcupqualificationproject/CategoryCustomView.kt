@@ -3,7 +3,6 @@ package com.example.vkcupqualificationproject
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.AnimatedVectorDrawable
-import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -43,7 +42,7 @@ class CategoryCustomView @JvmOverloads constructor(
 
 		val transition = TransitionDrawable(colorsArray)
 		binding.mainLayout.background = transition
-		transition.startTransition(450)
+		transition.startTransition(resources.getInteger(R.integer.category_animation_duration))
 	}
 
 	fun onButtonClickListener() {

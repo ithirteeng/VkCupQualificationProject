@@ -2,4 +2,8 @@
 	<string name="app_name">VkCupQualificationProject</string>
 	<string name="category_default_text">text</string>
 	<string name="category_image_description">add/remove category</string>
+
+	<string name="category_tick_name">tick</string>
+	<string name="category_add_name">add</string>
+	<string name="category_group_name">tickAddGroup</string>
 </resources>

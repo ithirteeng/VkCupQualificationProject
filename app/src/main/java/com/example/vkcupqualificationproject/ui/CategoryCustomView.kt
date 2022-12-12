@@ -1,4 +1,4 @@
-package com.example.vkcupqualificationproject
+package com.example.vkcupqualificationproject.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.vkcupqualificationproject.R
 import com.example.vkcupqualificationproject.databinding.CustomViewCategoryBinding
 
 class CategoryCustomView @JvmOverloads constructor(
@@ -50,6 +51,10 @@ class CategoryCustomView @JvmOverloads constructor(
 			addAnimation()
 			recolorCardView()
 		}
+	}
+
+	fun setCategoryText(category: String) {
+		binding.textView.text = category
 	}
 
 

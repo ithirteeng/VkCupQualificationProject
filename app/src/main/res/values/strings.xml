@@ -6,4 +6,7 @@
 	<string name="category_tick_name">tick</string>
 	<string name="category_add_name">add</string>
 	<string name="category_group_name">tickAddGroup</string>
+	<string name="header_text">Отметьте то, что вам интересно, чтобы настроить Дзен</string>
+	<string name="later_text">Позже</string>
+	<string name="continue_text">Продолжить</string>
 </resources>

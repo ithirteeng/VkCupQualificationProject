@@ -2,5 +2,9 @@
 <resources>
 	<dimen name="category_padding">8dp</dimen>
 	<dimen name="category_elements_margin">8dp</dimen>
+	<dimen name="main_margin">10dp</dimen>
 	<dimen name="category_text_size">20sp</dimen>
+	<dimen name="header_text_size">17sp</dimen>
+	<dimen name="later_button_text_size">18sp</dimen>
+	<dimen name="continue_button_padding">30dp</dimen>
 </resources>

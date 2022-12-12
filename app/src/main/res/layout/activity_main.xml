@@ -14,19 +14,31 @@
 		android:layout_margin="@dimen/main_margin"
 		android:overScrollMode="never"
 		android:scrollbars="none"
-		app:layout_constraintBottom_toTopOf="@+id/scrollViewBottomGuideline"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/laterButton"
 		tools:ignore="SpeakableTextPresentCheck">
 
-		<com.google.android.flexbox.FlexboxLayout
-			android:id="@+id/flexBox"
+		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			app:alignContent="stretch"
-			app:alignItems="stretch"
-			app:flexWrap="wrap" />
+			android:orientation="vertical">
+
+			<com.google.android.flexbox.FlexboxLayout
+				android:id="@+id/flexBox"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:alignContent="stretch"
+				app:alignItems="stretch"
+				app:flexWrap="wrap" />
+
+			<View
+				android:layout_width="wrap_content"
+				android:layout_height="150dp" />
+
+		</LinearLayout>
+
 
 	</ScrollView>
 
@@ -35,7 +47,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.8" />
+		app:layout_constraintGuide_percent="0.9220246" />
 
 	<TextView
 		android:id="@+id/headerTextView"
@@ -71,7 +83,6 @@
 		android:id="@+id/continueButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/main_margin"
 		android:background="@drawable/continue_button_background"
 		android:paddingBottom="@dimen/continue_button_padding"
 		android:paddingEnd="@dimen/continue_button_padding_horizontal"
@@ -81,8 +92,8 @@
 		android:textAllCaps="false"
 		android:textSize="@dimen/category_text_size"
 		android:visibility="gone"
+		app:layout_constraintBottom_toTopOf="@+id/scrollViewBottomGuideline"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="@+id/scrollViewBottomGuideline" />
+		app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,13 @@
 package com.example.vkcupqualificationproject.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.example.vkcupqualificationproject.R
 import com.example.vkcupqualificationproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -43,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 		setupFlexBox()
-
+		setAnimationForContinueButton()
 	}
 
 	private fun setupFlexBox() {
@@ -54,7 +57,6 @@ class MainActivity : AppCompatActivity() {
 			categoryView.setCategoryText(category)
 			categoryView.setOnCategoryClickListener {
 				changeContinueButtonVisibility()
-				Log.d("SHIIIT", countSelectedCategories().toString())
 			}
 			binding.flexBox.addView(categoryView)
 			setCategoryMargin(categoryView)
@@ -83,5 +85,21 @@ class MainActivity : AppCompatActivity() {
 			}
 		}
 		return count
+	}
+
+	@SuppressLint("ClickableViewAccessibility")
+	private fun setAnimationForContinueButton() {
+		val scaleUpAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_up_button)
+		val scaleDownAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_down_button)
+		binding.continueButton.setOnTouchListener { button, motionEvent ->
+			if (motionEvent.action == MotionEvent.ACTION_DOWN) {
+				button.startAnimation(scaleUpAnimation)
+			} else if (motionEvent.action == MotionEvent.ACTION_UP) {
+				button.startAnimation(scaleDownAnimation)
+			} else if (button.isPressed) {
+				button.startAnimation(scaleDownAnimation)
+			}
+			true
+		}
 	}
 }

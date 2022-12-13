@@ -38,7 +38,10 @@ class CategoryCustomView @JvmOverloads constructor(
 
 		var colorsArray = arrayOf(orangeColor, grayColor)
 		if (isCardSelected) {
+			binding.line.visibility = View.INVISIBLE
 			colorsArray = arrayOf(grayColor, orangeColor)
+		} else {
+			binding.line.visibility = View.VISIBLE
 		}
 
 		val transition = TransitionDrawable(colorsArray)
